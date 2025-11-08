@@ -35,9 +35,10 @@ export const registerUser = (user: Omit<User, 'id'>): User => {
   return newUser;
 };
 
-export const loginUser = (email: string, password: string): User | null => {
+export const loginUser = (email: string, _password: string): User | null => {
   const users = getUsers();
   // En esta demo, cualquier email/password funciona si el usuario existe
+  // El parámetro _password se ignora intencionalmente para la demo
   const user = users.find(u => u.email === email);
   return user || null;
 };
